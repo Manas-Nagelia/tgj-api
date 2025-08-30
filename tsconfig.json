@@ -8,7 +8,17 @@
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@routes/*": ["routes/*"],
+      "@controllers/*": ["controllers/*"],
+      "@schemas/*": ["schemas/*"],
+      "@prompts/*": ["prompts/*"],
+      "@services/*": ["services/*"],
+      "@clients/*": ["clients/*"],
+      "@config/*": ["config/*"]
+    },
+    "baseUrl": "src"
   },
   "include": ["src"]
 }

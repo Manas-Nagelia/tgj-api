@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { fetchArticle } from "../services/article.service";
-import { getBiasRating } from "../services/bias.service";
-import { getFactCheck } from "../services/fact.service";
+import { fetchArticle } from "../../services/article.service";
+import { getBiasRating } from "../../services/bias.service";
 
 export async function analyzeArticleController(
   req: Request,
@@ -21,13 +20,9 @@ export async function analyzeArticleController(
       return res.status(404).json({ error: "Could not extract article" });
 
     const bias_rating = await getBiasRating(article);
-    // const fact_check = await getFactCheck(article);
 
     if (!bias_rating)
       return res.status(500).json({ error: "AI response is empty" });
-
-    // if (!fact_check)
-    //     return res.status(500).json({ error: "AI response is empty" });
 
     res.json({ bias_rating });
   } catch (error) {
