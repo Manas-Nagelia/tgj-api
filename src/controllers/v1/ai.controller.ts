@@ -24,7 +24,6 @@ export async function analyzeArticleController(
     if (!bias_rating)
       return res.status(500).json({ error: "AI response is empty" });
 
-    console.log(bias_rating.explanation)
     res.json({ bias_rating });
   } catch (error) {
     next(error);
