@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { fetchArticle } from "../../services/article.service";
-import { getBiasRating } from "../../services/bias.service";
+import { getBiasRating } from "../../services/v1/bias.service";
 
 export async function analyzeArticleController(
   req: Request,
@@ -24,6 +24,7 @@ export async function analyzeArticleController(
     if (!bias_rating)
       return res.status(500).json({ error: "AI response is empty" });
 
+    console.log(bias_rating.explanation)
     res.json({ bias_rating });
   } catch (error) {
     next(error);

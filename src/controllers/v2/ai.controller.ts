@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { fetchArticle } from "../../services/article.service";
-import { getBiasRating } from "../../services/bias.service";
-import { getFactCheck } from "../../services/fact.service";
+import { getBiasRating } from "../../services/v1/bias.service";
+import { getFactCheck } from "../../services/v2/fact.service";
 
 export async function analyzeArticleController(
   req: Request,
