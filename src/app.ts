@@ -2,7 +2,7 @@ import express from 'express';
 import routes_v1 from './routes/v1';
 import routes_v2 from './routes/v2';
 
-export const createApp = () => {
+const createApp = () => {
   const app = express();
   app.use(express.json());
 
@@ -11,3 +11,5 @@ export const createApp = () => {
 
   return app;
 };
+
+export default createApp;
