@@ -4,6 +4,7 @@ import { biasSystemPrompt } from "../../prompts/v1/bias.prompt";
 import { BiasRatingSchema } from "../../schemas/bias.schemas";
 
 export async function getBiasRating(article: string) {
+  // $0.25 / 1M tokens with gpt-5-mini
   const ai_response = await openai.responses.parse({
     model: "gpt-5-mini",
     reasoning: { effort: "low" },

@@ -10,15 +10,14 @@
     "resolveJsonModule": true,
     "types": ["node"],
     "paths": {
-      "@routes/*": ["routes/*"],
-      "@controllers/*": ["controllers/*"],
-      "@schemas/*": ["schemas/*"],
-      "@prompts/*": ["prompts/*"],
-      "@services/*": ["services/*"],
-      "@clients/*": ["clients/*"],
-      "@config/*": ["config/*"]
-    },
-    "baseUrl": "src"
+      "@routes/*": ["./src/routes/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@schemas/*": ["./src/schemas/*"],
+      "@prompts/*": ["./src/prompts/*"],
+      "@services/*": ["./src/services/*"],
+      "@clients/*": ["./src/clients/*"],
+      "@config/*": ["./src/config/*"]
+    }
   },
   "include": ["src"]
 }
